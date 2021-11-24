@@ -147,7 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'djangogirl7@gmail.com'
-EMAIL_HOST_PASSWORD = 'Password123#'
+EMAIL_HOST_PASSWORD = 'cinkxkaofjfhmjwg'
 EMAIL_PORT = 587
 
 # Activate Django-Heroku.
