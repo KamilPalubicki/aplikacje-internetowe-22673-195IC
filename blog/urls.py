@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
+from django.contrib import admin
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -13,10 +14,10 @@ urlpatterns = [
         views.activate, name='activate'),
     path('', views.base, name='base'),
     url(r'^$', views.base, name='home'),
-    url(r'^password_change/$', views.change_password, name='password_change'),
+    url(r'^password_change/$', views.change_password, name='change_password'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^accounts/reset_password/$',
-        auth_views.PasswordResetView.as_view(template_name="registration/password_reset.html"), name='password_reset'),
+        auth_views.PasswordResetView.as_view(template_name="registration/reset_password.html"), name='reset_password'),
     url(r'^accounts/password_reset/done/$',
         auth_views.PasswordResetDoneView.as_view(template_name="registration/password_reset_sent.html"),
         name='password_reset_done'),

@@ -8,7 +8,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path(
             'change_password/',
-            auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html'),
+            auth_views.PasswordChangeView.as_view(template_name='registration/change_password.html'),
         ),
     path(
              'login/',

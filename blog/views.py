@@ -78,7 +78,7 @@ def change_password(request):
             return render(request, 'registration/change_password_fail.html', {'form': form})
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'registration/password_change.html', {
+    return render(request, 'registration/change_password.html', {
         'form': form
     })
 
@@ -92,7 +92,7 @@ def signup(request):
             user.save()
             current_site = get_current_site(request)
             mail_subject = 'Aktywuj konto na blogu Kamila Pałubickiego'
-            message = render_to_string('registration/activation_email.html', {
+            message = render_to_string('registration/acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
