@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import PasswordChangeForm, UserCreationForm
 from django.contrib.auth import authenticate, login, update_session_auth_hash
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.http import HttpResponse
 from django.contrib.sites.shortcuts import get_current_site
@@ -12,20 +12,25 @@ from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib import messages
 from .tokens import account_activation_token
+
 from .models import Post
 from .forms import PostForm, SignupForm
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+
 def post_new(request):
     form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+
 
 def post_new(request):
     if request.method == "POST":
@@ -39,6 +44,7 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -54,10 +60,12 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
+
 
 def change_password(request):
     if request.method == 'POST':
@@ -74,6 +82,7 @@ def change_password(request):
         'form': form
     })
 
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -86,18 +95,19 @@ def signup(request):
             message = render_to_string('registration/activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-                'token':account_activation_token.make_token(user),
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
             })
             to_email = form.cleaned_data.get('email')
             email = EmailMessage(
-                        mail_subject, message, to=[to_email]
+                mail_subject, message, to=[to_email]
             )
             email.send()
             return render(request, 'registration/signup_success.html', {'form': form})
     else:
         form = SignupForm()
     return render(request, 'registration/signup.html', {'form': form})
+
 
 def activate(request, uidb64, token):
     try:
@@ -112,6 +122,7 @@ def activate(request, uidb64, token):
         return HttpResponse('Rejestracja powiodła się.')
     else:
         return HttpResponse('Rejestracja nie powiodła się!')
+
 
 def base(request):
     return redirect('base')
