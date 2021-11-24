@@ -13,7 +13,7 @@ urlpatterns = [
         views.activate, name='activate'),
     path('', views.base, name='base'),
     url(r'^$', views.base, name='home'),
-    url(r'^password_change/$', views.change_password, name='change_password'),
+    url(r'^password_change/$', views.change_password, name='password_change'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^accounts/reset_password/$',
         auth_views.PasswordResetView.as_view(template_name="registration/password_reset.html"), name='password_reset'),

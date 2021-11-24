@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from pathlib import Path
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -29,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com', '.herokuapp.com']
 
+SITE_ID = 1
 
 # Application definition
 
@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'blog',
 ]
 
@@ -62,7 +60,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,7 +132,6 @@ LOGOUT_REDIRECT_URL = 'login'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -149,8 +146,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'duhastonpl@gmail.com'
-EMAIL_HOST_PASSWORD = 'lrodkdluatkpmdzd'
+EMAIL_HOST_USER = 'djangogirl7@gmail.com'
+EMAIL_HOST_PASSWORD = 'Password123#'
 EMAIL_PORT = 587
 
 # Activate Django-Heroku.

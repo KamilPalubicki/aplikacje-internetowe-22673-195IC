@@ -70,7 +70,7 @@ def change_password(request):
             return render(request, 'registration/change_password_fail.html', {'form': form})
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'registration/change_password.html', {
+    return render(request, 'registration/password_change.html', {
         'form': form
     })
 
