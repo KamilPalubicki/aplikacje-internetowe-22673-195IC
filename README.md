@@ -29,7 +29,8 @@ http://palubickikamil.pythonanywhere.com/
 ![image](assets/scr/change_password.png "change password")
 ![image](assets/scr/change_password2.png "change password")
 ### Możliwość resetu hasła:
-![image](assets/scr/reset_pass.png "reset password")
-![image](assets/scr/reset_pass2.png "reset password")
-![image](assets/scr/reset_pass3.png "reset password")
-![image](assets/scr/reset_pass4.png "reset password")
+![image](assets/scr/resetpass.png "reset password")
+![image](assets/scr/resetpass2.png "reset password")
+![image](assets/scr/resetpass3.png "reset password")
+![image](assets/scr/resetpass4.png "reset password")
+### Użytkownik od razu po wprowadzeniu nowego hasła jest w stanie zalogować się na swoje konto
