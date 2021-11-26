@@ -15,7 +15,6 @@ http://palubickikamil.pythonanywhere.com/
 ![image](assets/scr/3.png "Edit/Delete")
 
 ## Laboratorium 2 Rejestracja użytkowników (Django+Heroku)
-<br>
 Link do strony :
 https://palubickikamil.herokuapp.com/
 <br>
