@@ -15,7 +15,10 @@ http://palubickikamil.pythonanywhere.com/
 ![image](assets/scr/3.png "Edit/Delete")
 
 ## Laboratorium 2 Rejestracja użytkowników (Django+Heroku)
-
+<br>
+Link do strony :
+https://palubickikamil.herokuapp.com/
+<br>
 ### Pierwsza zmianą było przejście na heroku z powodu problemów z wysyłaniem maili. Dodałem również na początku możliwość rejestracji, zalogowania oraz resetu hasła.
 ![image](assets/scr/view.png "Home")
 ### Rejestracja nowego użytkownika:
