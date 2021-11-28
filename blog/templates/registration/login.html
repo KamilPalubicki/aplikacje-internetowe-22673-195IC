@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %}
+{% load account socialaccount %}
 
 {% block content %}
 
 {% if form.errors %}
 <p>Niepoprawny login lub hasło, spróbuj ponownie</p>
 {% endif %}
-<p>
 <form method="post" action="{% url 'login' %}">
   {% csrf_token %}
   <table>
@@ -21,17 +21,16 @@
   </table>
   <input style="margin-left: 10px;" type="submit" value="login" />
   <input style="text-align: center" type="hidden" name="next" value="{{ next }}" />
-  <ul class="socials">
-    <li>
-      <a title="Github" class="socialaccount_provider github " href="/accounts/github/login/?process=login"></span>Zaloguj się przy użyciu Github</a>
-    </li>
-    <li>
-      <a title="Google" class="socialaccount_provider google " href="/accounts/google/login/?process=login"></span>Zaloguj się przy użyciu Google</a>
-    </li>
-    <li>
-      <a title="Facebook" class="socialaccount_provider facebook " href="/accounts/facebook/login/?process=login"></span>Zaloguj się przy użyciu Facebook</a>
-    </li>
-  </ul>
 </form>
-</p>
+<div class="btn-group">
+  <button class="loginBtn loginBtn--facebook" onclick="location.href='/accounts/facebook/login/?process=login'">
+    Zaloguj się przy użyciu Facebook
+  </button>
+  <button class="loginBtn loginBtn--google" onclick="location.href='/accounts/google/login/?process=login'">
+    Zaloguj się przy użyciu Google
+  </button>
+  <button class="loginBtn loginBtn--github" onclick="location.href='/accounts/github/login/?process=login'">
+    Zaloguj się przy użyciu Github
+  </button>
+</div>
 {% endblock %}
