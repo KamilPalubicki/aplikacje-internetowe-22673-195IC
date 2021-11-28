@@ -15,7 +15,7 @@
             {% endif %}
                 <h1><a href="/">Kamil Pałubicki Blog</a></h1>
             {% if user.is_authenticated %}
-                <p class="text-end"><a href="{% url 'password_change' %}">Zmień hasło</a></p>
+                <p class="text-start"><a href="{% url 'change_password' %}">Zmień hasło</a></p>
             {% else %}
                 <p class="text-start"><a href="{% url 'login' %}">Zaloguj się</a></p>
                 <p class="text-start"><a href="{% url 'signup' %}">Zarejestruj się</a></p>
