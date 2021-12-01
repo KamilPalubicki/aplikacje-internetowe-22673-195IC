@@ -37,3 +37,23 @@ https://palubickikamil.herokuapp.com/
 ![image](assets/scr/resetpass3.png "reset password")
 ![image](assets/scr/resetpass4.png "reset password")
 ### Użytkownik od razu po wprowadzeniu nowego hasła jest w stanie zalogować się na swoje konto
+
+## Laboratorium 3 Różne sposoby uwierzytelniania (Django+Heroku)
+
+### Od teraz jest możliwość również uwierzytelniania za pomocą facebook'a, Google i Github.
+![image](assets/scr/socialauth.png "authorization")
+
+### Facebook:
+![image](assets/scr/facebook.png "facebook auth")
+![image](assets/scr/facebook2.png "facebook auth")
+
+### Google:
+![image](assets/scr/google.png "google auth")
+![image](assets/scr/google2.png "google auth")
+
+### Github:
+![image](assets/scr/github.png "github auth")
+![image](assets/scr/github2.png "github auth")
+
+### Możemy teraz w panelu admina zobaczyć wszystkie konta społecznościowe utworzone poprzez autoryzacje za pomocą wcześniej pokazanych aplikacji
+![image](assets/scr/socialaccounts.png "accounts")
