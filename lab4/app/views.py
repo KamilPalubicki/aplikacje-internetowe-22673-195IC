@@ -1,17 +1,25 @@
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from datetime import datetime
-from rest_framework import filters, generics, viewsets, permissions
+from rest_framework import filters, generics, viewsets, permissions, status
 from .models import Post
-from .permissions import IsAuthorOrReadOnly
+from rest_framework.views import APIView
+from .permissions import IsAuthorOrReadOnly, IsAssigned
 from .serializers import PostSerializer, UserSerializer
+from rest_framework.renderers import HTMLFormRenderer, JSONRenderer, BrowsableAPIRenderer
+from rest_framework.response import Response
 
 
-class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
+class PostList(APIView):
     serializer_class = PostSerializer
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['title']
+    renderer_classes = (BrowsableAPIRenderer, JSONRenderer, HTMLFormRenderer)
+
+    def post(self, request, *args, **kwargs):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
