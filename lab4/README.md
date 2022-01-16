@@ -1,23 +1,31 @@
-## Laboratorium 4 REST API z DRF
+## Laboratorium 6 Zezwolenia i uwierzytelnianie w DRF
 
-#### W celu sprawdzenia działania połaczenia djanog z naszym API stworzyłem przykładowy post za pomocą panelu admina.
-## Post list
-#### Po przejściu do panelu REST ( api/v1 ) będąc nie zalogowanym możemy zobaczyć komunikat o braku autoryzacji:
-![image](assets/scr/postListNotLoggedIn.png "PostListNotLogged")
-#### Po zalogowaniu jako superuser:
-![image](assets/scr/postListLoggedIn.png "PostListLogged")
-## Post list - dodawanie i filtrowanie postów
-#### Możliwość dodania postu poprzez panel - HTML Form
-![image](assets/scr/dodawaniepostu.png "DodawaniePostu")
-#### Post widoczny po dodaniu
-![image](assets/scr/dodawaniepostu2.png "DodawaniePostu")
-#### Możemy również dodawać posty poprzez bezpośrednie wpisywanie danych w formie json
-![image](assets/scr/dodawaniepostu3.png "DodawaniePostu")
-![image](assets/scr/dodawaniepostu4.png "DodawaniePostu")
-#### Filtrowanie postów 
-![image](assets/scr/filtr.png "Filtrowanie")
-#### Możemy też wyszukać post korzystając z 'search bar'
-![image](assets/scr/filtr2.png "Filtrowanie")
-![image](assets/scr/filtr3.png "Filtrowanie")
-## Swagger
-![image](assets/scr/swagger.png "Swagger")
+#### Przy pomocy Django-rest-auth stworzyłem widoki logowania, wylogowywania, rejestracji oraz zmiany hasła
+## Rejestracja użytkownika i otrzymanie tokenu
+#### Utworzony token będzie potrzebny do uwierzytelniania poprzez niego
+![image](assets/scr/register.png "Register")
+![image](assets/scr/register2.png "Register")
+#### Treść maila po utworzeniu konta
+![image](assets/scr/register3.png "Register")
+## Logowanie za pomocą sesji
+#### Po odświeżeniu strony jesteśmy zalogowani na utworzone konto na podstawie sesji
+![image](assets/scr/sessionLogin.png "SessionLogin")
+![image](assets/scr/sessionLogin2.png "SessionLogin")
+## Logowanie za pomocą tokenu
+![image](assets/scr/tokenLogin.png "TokenLogin")
+![image](assets/scr/tokenLogin2.png "TokenLogin")
+## Logowanie klasyczne
+![image](assets/scr/login.png "Login")
+![image](assets/scr/login2.png "Login")
+## Wylogowanie
+![image](assets/scr/logout.png "Logout")
+![image](assets/scr/logout2.png "Logout")
+## Zmiana hasła
+![image](assets/scr/passwordreset.png "PssswordReset")
+## Potwierdzenie zmiany hasła
+![image](assets/scr/resetconfirm.png "PasswordResetConfirm")
+## Tokeny
+![image](assets/scr/token.png "Token")
+
+
+
