@@ -3,9 +3,9 @@
 #### W celu sprawdzenia działania połaczenia djanog z naszym API stworzyłem przykładowy post za pomocą panelu admina.
 ## Post list
 #### Po przejściu do panelu REST ( api/v1 ) będąc nie zalogowanym możemy zobaczyć komunikat o braku autoryzacji:
-![image](assets/scr/postListNotLoggedin.png "PostListNotLogged")
+![image](assets/scr/postListNotLoggedIn.png "PostListNotLogged")
 #### Po zalogowaniu jako superuser:
-![image](assets/scr/postListLoggedin.png "PostListLogged")
+![image](assets/scr/postListLoggedIn.png "PostListLogged")
 ## Post list - dodawanie i filtrowanie postów
 #### Możliwość dodania postu poprzez panel - HTML Form
 ![image](assets/scr/dodawaniepostu.png "DodawaniePostu")
