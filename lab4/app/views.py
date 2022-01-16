@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from datetime import datetime
@@ -6,8 +7,23 @@ from .models import Post
 from rest_framework.views import APIView
 from .permissions import IsAuthorOrReadOnly, IsAssigned
 from .serializers import PostSerializer, UserSerializer
+
+
 from rest_framework.renderers import HTMLFormRenderer, JSONRenderer, BrowsableAPIRenderer
 from rest_framework.response import Response
+
+
+def test_cookie(request):
+    if request.COOKIES.get('visits'):
+        value = int(request.COOKIES.get('visits')) + 1
+        response = HttpResponse(f"Witaj ponownie! Po raz {value}")
+        response.set_cookie('visits', value)
+        return response
+    else:
+        value = 1
+        response = HttpResponse("Witaj po raz pierwszy.")
+        response.set_cookie('visits', value)
+        return response
 
 
 class PostList(APIView):

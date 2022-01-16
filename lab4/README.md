@@ -26,6 +26,10 @@
 ![image](assets/scr/resetconfirm.png "PasswordResetConfirm")
 ## Tokeny
 ![image](assets/scr/token.png "Token")
+## Cookies
+![image](assets/scr/cookies.png "Cookies")
+![image](assets/scr/cookies2.png "Cookies")
+![image](assets/scr/cookies3.png "Cookies")
 
 
 
