@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <h2>1</h2>
+        <ul><li><span>{{seventh_p_text}}</span></li></ul>
+        <h2>Ilość elementów < p >:</h2>
+        <span>{{all_p_tagslen}}</span>
+    </div>
+    <div>
+        <h2>2</h2>
+        {% for items in top_items  %}
+        <ul>
+            <li>{{items.title}}</li>
+            <li>{{items.review}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>3</h2>
+         {% for im in image_data %}
+            <ul>
+                <b>Src: </b> {{im.src}}<br>
+                <b>Alt: </b> {{im.alt}}<br>
+            </ul>
+        {% endfor %} <br>
+    </div>
+    <div>
+        <h2>4</h2>
+        {% for produkt in all_products %}
+            <ul>
+                <li>{{produkt.name}}</li>
+                <li>{{produkt.description}}</li>
+                <li>{{produkt.price}}</li>
+                <li>{{produkt.reviews}}</li>
+                <li>{{produkt.image}}</li>
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock %}
